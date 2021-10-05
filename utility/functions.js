@@ -1,10 +1,10 @@
-export function getRefId(originalUrl) {
+function getRefId(originalUrl) {
     var paths = originalUrl.split("/");
     refId = paths[paths.length - 1];
     return refId;
   }
 
-  export function getUserDevice(agent) {
+  function getUserDevice(agent) {
     let device = "Other";
     for (key in agent) {
       if (agent["isDesktop"] == true) {
@@ -23,7 +23,7 @@ export function getRefId(originalUrl) {
     return device;
   }
 
- export function getRedirectLink(db,ref,res){
+ function getRedirectLink(db,ref,res){
     db.collection("cities").where("ref_id", "==", ref)
       .get()
       .then((querySnapshot) => {
@@ -38,3 +38,7 @@ export function getRefId(originalUrl) {
           console.log("Error getting documents: ", error);
       });
   }
+
+  exports.getRedirectLink=getRedirectLink;
+  exports.getUserDevice=getUserDevice;
+  exports.getRefId=getRefId
