@@ -24,7 +24,7 @@ function getRefId(originalUrl) {
   }
 
  function getRedirectLink(db,ref,res){
-    db.collection("cities").where("ref_id", "==", ref)
+    db.collection("users").where("ref_id", "==", ref)
       .get()
       .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
