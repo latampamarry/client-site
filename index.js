@@ -22,7 +22,7 @@ app.use(express.static(__dirname + "/public"));
 
 
 var refId;
-var defaultrefId = "qazwsx-edc";
+var defaultrefId = "uF2tIVrel1";
 refId = defaultrefId;
 
 app.get("/", (req, res) => {
